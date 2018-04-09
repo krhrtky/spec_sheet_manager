@@ -1,0 +1,16 @@
+<p>confirm</p>
+<%= form_for @user, :url => {:action => 'create'} do |f| %>
+  <div class="field">
+    name: <%= @user.name %>
+    <%= f.hidden_field  :name %>
+  </div>
+  <div class="field">
+    mail: <%= @user.mail %>
+    <%= f.hidden_field :mail %>
+  </div>
+  <div class="field">
+    password: <%= @user.password %>
+    <%= f.hidden_field :password %>
+  </div>
+  <%= f.submit "create" %>
+<% end %>
