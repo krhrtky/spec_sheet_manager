@@ -1,10 +1,10 @@
 <p>new</p>
-<%= form_tag({:controller => 'users', :action => 'create' }, { :method => :post }) do %>
-  <%= label_tag :名前 %>
+<%= form_tag({:controller => 'users', :action => 'confirm' }, { :method => :post }) do %>
+  <%= label_tag :name %>
   <%= text_field_tag :name %>
-  <%= label_tag :メールアドレス %>
+  <%= label_tag :mail %>
   <%= text_area_tag :mail %>
-  <%= label_tag :パスワード %>
-  <%= text_area_tag :password%>
-  <%= submit_tag "登録" %>
+  <%= label_tag :password %>
+  <%= password_field :password%>
+  <%= submit_tag "confirm" %>
 <% end %>
