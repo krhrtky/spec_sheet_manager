@@ -1,10 +1,16 @@
 <p>new</p>
-<%= form_tag({:controller => 'users', :action => 'confirm' }, { :method => :post }) do %>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %>
-  <%= label_tag :mail %>
-  <%= text_area_tag :mail %>
-  <%= label_tag :password %>
-  <%= password_field :password%>
-  <%= submit_tag "confirm" %>
+<%= form_for @user, :url => {:action => 'confirm'} do |f| %>
+  <div class="field">
+    name:
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    mail:
+    <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    password:
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "confirm" %>
 <% end %>
