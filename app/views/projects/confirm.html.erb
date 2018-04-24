@@ -1,0 +1,20 @@
+<p>input confirm</p>
+<%= form_for @project, :url => {:action => 'create'} do |f| %>
+  <div class="field">
+    name: <%= @project.name %>
+    <%= f.hidden_field  :name %>
+  </div>
+  <div class="field">
+    mail: <%= @project.about %>
+    <%= f.hidden_field :about %>
+  </div>
+  <div class="field">
+    start date: <%= @project.start_date %>
+    <%= f.hidden_field :start_date %>
+  </div>
+  <div class="field">
+    end date: <%= @project.end_date %>
+    <%= f.hidden_field :end_date %>
+  </div>
+  <%= f.submit "create" %>
+<% end %>
