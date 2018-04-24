@@ -1,0 +1,20 @@
+<p>New Project</p>
+<%= form_for @project, :url => {:action => 'confirm'} do |f| %>
+  <div class="field">
+    name:
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    about:
+    <%= f.text_field :about %>
+  </div>
+  <div class="field">
+    start date:
+    <%= f.text_field :start_date %>
+  </div>
+  <div class="field">
+    end date:
+    <%= f.text_field :end_date %>
+  </div>
+  <%= f.submit "confirm" %>
+<% end %>

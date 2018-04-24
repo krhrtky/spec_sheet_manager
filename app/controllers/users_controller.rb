@@ -6,21 +6,25 @@ class UsersController < ApplicationController
   end
 
   def confirm
-    @user = create_user(params[:user][:name], params[:user][:mail], params[:user][:password])
+    @user = create_user params[:user]
   end
 
   def create
-    @user = User.create(name: params[:user][:name], mail: params[:user][:mail], password: params[:user][:password])
+    @user = User.create(
+      name: params[:user][:name],
+      mail: params[:user][:mail],
+      password: params[:user][:password]
+    )
 
     @result_message = 'success'
   end
 
   private
-  def create_user name, mail, password
+  def create_user params
     user = User.new
-    user.name = name
-    user.mail = mail
-    user.password = password
+    user.name = params[:name]
+    user.mail = params[:mail]
+    user.password = params[:password]
     user
   end
 end
