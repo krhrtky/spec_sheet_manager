@@ -1,16 +1,20 @@
 <p>new</p>
-<%= form_for @user, :url => {:action => 'confirm'} do |f| %>
+<%= form_for @user  do |f|%>
   <div class="field">
-    name:
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    mail:
+    <%= f.label :mail %>
     <%= f.text_field :mail %>
   </div>
   <div class="field">
-    password:
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <%= f.submit "confirm" %>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit "create" %>
 <% end %>
